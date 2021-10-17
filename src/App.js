@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import TodoItem from "./components/TodoItem/TodoItem";
+import "./App.css";
 
 function App() {
+  const todos = [
+    { id: 1, title: "clean the house", isCompleted: false },
+    { id: 2, title: "pay the credit card bill", isCompleted: true },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {todos.map((todo) => {
+        return <TodoItem key={todo.id} todo={todo} />;
+      })}
     </div>
   );
 }
