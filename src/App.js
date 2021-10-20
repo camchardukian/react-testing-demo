@@ -1,4 +1,5 @@
 import TodoItem from "./components/TodoItem/TodoItem";
+import CounterSection from "./components/CounterSection/CounterSection";
 import "./App.css";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       {todos.map((todo) => {
         return <TodoItem key={todo.id} todo={todo} />;
       })}
+      <CounterSection />
     </div>
   );
 }
